@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'result.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="head">
+            <h2>here's your books for the query</h3>
+            <h1>"{{query}}"</h1>
+        </div>
+        <div class="books">
+            {%for index, row in books.iterrows %}
+            <div class="book">
+                <a href="{{row.url}}" target="_blank">
+                <img src={{row.image_url}} alt="">
+                <div class="text">
+                    <h3>{{row.title | truncatechars:30}}</h3>
+                    <p class = "rating">{{row.average_rating }} rating</p>
+                    <p>{{row.description | truncatechars:50}}</p>
+                </div>
+            </a>
+            </div>
+            {%endfor%}
+        </div>
+        </div>
+        
+    
+</body>
+</html>

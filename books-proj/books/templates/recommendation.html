@@ -1,0 +1,119 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'recommendation.css' %}"  type="text/css">
+    <title>Book recommender</title>
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'book.png' %}" alt="" class="icon">
+        <hr/>
+        <div class="form">
+            
+            
+            <form action="result" method="post">
+              {% csrf_token %} 
+                <div class="query"></div>
+                <h1>Write down whatever you feel like reading and we will hook you up with the perfect book!</h1>
+                <textarea type="text" name="query" placeholder="write your thoughts in here..."></textarea>
+                <br>
+                </div>
+                <div class="genre">
+                    <h1>you can choose the genres of your liking to help aid the process~</h1>
+                    <div class="check-genre">
+                            <label class="genre-label">
+                                <input type="checkbox" name="genres" value="children">
+                                <div class="genre-text">
+                                  Children
+                                </div>
+                                <span class="checkmark"></span>
+                              </label>
+                              
+                              <label class="genre-label">
+                                <input type="checkbox" name="genres" value="comics, graphic">
+                                <div class="genre-text">
+                                  Cosmic/graphic
+                                </div>
+                                <span class="checkmark"></span>
+                              </label>
+                              
+                              <label class="genre-label">
+                                <input type="checkbox" name="genres" value="fantasy, paranormal">
+                                <div class="genre-text">
+                                  Fantasy/paranormal
+                                </div>
+                                <span class="checkmark"></span>
+                              </label>
+                              
+                              <label class="genre-label">
+                                <input type="checkbox" name="genres" value="fiction">
+                                <div class="genre-text">
+                                  Fiction
+                                </div>
+                                <span class="checkmark"></span>
+                              </label>
+                              
+                              <label class="genre-label">
+                                <input type="checkbox" name="genres" value="non-fiction">
+                                <div class="genre-text">
+                                  Non-fiction
+                                </div>
+                                <span class="checkmark"></span>
+                              </label>
+                              <label class="genre-label">
+                                <input type="checkbox" name="genres" value="poetry">
+                                <div class="genre-text">
+                                  Poetry
+                                </div>
+                                <span class="checkmark"></span>
+                              </label>
+                              <label class="genre-label">
+                                <input type="checkbox" name="genres" value="romance">
+                                <div class="genre-text">
+                                  Romance
+                                </div>
+                                <span class="checkmark"></span>
+                              </label>
+                              <label class="genre-label">
+                                <input type="checkbox" name="genres" value="young-adult">
+                                <div class="genre-text">
+                                  Young-adult
+                                </div>
+                                <span class="checkmark"></span>
+                              </label>
+                              <label class="genre-label">
+                                <input type="checkbox" name="genres" value="history, historical fiction, biography">
+                                <div class="genre-text">
+                                  History/historical fiction/biography
+                                </div>
+                                <span class="checkmark"></span>
+                              </label>
+                            <label class="genre-label">
+                                <input type="checkbox" name="genres" value="mystery, thriller, crime">
+                                <div class="genre-text">
+                                  Mystery/thriller/crime
+                                </div>
+                                <span class="checkmark"></span>
+                              </label>
+                          
+                    </div>
+                    
+                </div>
+                <input type="submit" class="button">
+
+            </form>
+
+        
+
+        
+    </div>
+    
+    
+</body>
+</html>
